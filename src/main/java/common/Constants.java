@@ -1,12 +1,10 @@
 package common;
 
-import static common.Constants.REQUESTSPECIFICATION;
-
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 
-public class Constants  {
-	
+public class Constants {
+
 	public static final String EMPTY_STRING = "";
 
 	// HTTP RESPONSE CODES CONSTANTS
@@ -30,12 +28,12 @@ public class Constants  {
 	public static final RequestSpecification REQUESTSPECIFICATION = new RequestSpecBuilder()
 			.addHeader("Accept", "application/json").addHeader("Content-Type", "application/json").build();
 
-
 	public static final RequestSpecification REQUESTSPECIFICATIONTOKEN = new RequestSpecBuilder()
-			.addHeader("Accept", "application/json").addHeader("Content-Type", "application/json").addHeader("Authorization", "Bearer X-YJbVxrlRM9JubL8ZoUBbKNuZoOZVmVsU_g").build();
-	
+			.addHeader("Accept", "application/json").addHeader("Content-Type", "application/json")
+			.addHeader("Authorization", "Bearer X-YJbVxrlRM9JubL8ZoUBbKNuZoOZVmVsU_g").build();
+
 	public static final RequestSpecification REQUESTSPECIFICATIONFORXML = new RequestSpecBuilder()
 			.addHeader("Accept", "text/xml").addHeader("Content-Type", "text/xml").build();
-	
+
 	public static final String BASE_URL = InterfaceReqres.buildServiceURL();
 }
