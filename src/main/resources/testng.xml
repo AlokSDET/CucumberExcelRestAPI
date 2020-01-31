@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AutomationTest" verbose="1">
+	<test name="RestAPITest">
+		<classes>
+			<class name="testmodules.ReqresLoginServicesTest" />
+			<class name="testmodules.ReqresRegisterServicesTest" />
+			<class name="testmodules.ReqresUsersServicesTest" />
+		</classes>
+	</test>
+
+</suite>

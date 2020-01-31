@@ -1,0 +1,64 @@
+Go to https://jsonschema.net/
+
+paste response and generate schema 
+
+schema is basically to validate the field format and data type in json.
+
+paste below code in test in postman to validate the schema :
+
+var schema =  
+{
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "http://example.com/root.json",
+    "type": "object",
+    "required": [
+      "data"
+    ],
+    "properties": {
+     "data": {
+       "$id": "#/properties/data",
+       "type": "object",
+       "required": [
+         "id",
+         "email",
+     "first_name",
+         "last_name",
+         "avatar"
+       ],
+       "properties": {
+         "id": {
+           "$id": "#/properties/data/properties/id",
+           "type": "number"
+     },
+         "email": {
+           "$id": "#/properties/data/properties/email",
+           "type": "string",
+           "pattern": "^(.*)$"
+         },
+         "first_name": {
+           "$id": "#/properties/data/properties/first_name",
+           "type": "string",
+           "pattern": "^(.*)$"
+         },
+         "last_name": {
+   "$id": "#/properties/data/properties/last_name",
+           "type": "string",
+           "pattern": "^(.*)$"
+         },
+         "avatar": {
+           "$id": "#/properties/data/properties/avatar",
+       "type": "string",
+           "pattern": "^(.*)$"
+         }
+       }
+     }
+   }
+ }
+ 
+
+
+pm.test('Test case for Schema validation', function() {
+  pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;
+
+});
